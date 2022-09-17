@@ -34,8 +34,8 @@ end)
 pcall(function() setscriptable(plr, "SimulationRadius", true) end)
 	
 run_service["Heartbeat"]:Connect(function()
-		plr.SimulationRadius = 1e+10
-		plr.MaximumSimulationRadius = 1e+10
+		game.Players.LocalPlayer.SimulationRadius = 1e+10
+		game.Players.LocalPlayer.MaximumSimulationRadius = 1e+10
 end)
 
 --!strict

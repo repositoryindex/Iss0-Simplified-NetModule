@@ -1,3 +1,4 @@
+local run_service = game:GetService("RunService")
 
 pcall(function()
   if hum then 
@@ -38,7 +39,6 @@ run_service["Heartbeat"]:Connect(function()
 end)
 
 --!strict
-local run_service: RunService = game:GetService("RunService")
 
 local debounce_tick: number = 0 
 

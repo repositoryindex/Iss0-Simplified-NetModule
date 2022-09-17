@@ -31,13 +31,6 @@ pcall(function()
   settings().Physics.UseCSGv2 = false
 end)
 
-pcall(function() setscriptable(plr, "SimulationRadius", true) end)
-	
-run_service["Heartbeat"]:Connect(function()
-		game.Players.LocalPlayer.SimulationRadius = 1e+10
-		game.Players.LocalPlayer.MaximumSimulationRadius = 1e+10
-end)
-
 --!strict
 
 local debounce_tick: number = 0 

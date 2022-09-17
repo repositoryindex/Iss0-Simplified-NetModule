@@ -57,11 +57,11 @@ net_module.calculate_vel = function(hum: Humanoid?, model: Model?, options: tabl
 			if tick() - debounce_tick < options.dv_debounce then
 				vel = (hum.MoveDirection * options.dv_multiplier) + options.st_vel / 2
 			else
-				vel = options.st_vel + (options.jum_vel and Vector3.new(0, model.PrimaryPart.AssemblyLinearVelocity.Y, 0) or Vector3.zero)
+				vel = options.st_vel + (options.jum_vel and Vector3.new(0, model.Head.AssemblyLinearVelocity.Y, 0) or Vector3.zero)
 			end
 		else
 			vel = (hum.MoveDirection * options.dv_multiplier)
-            vel += (options.jum_vel and Vector3.new(0, model.PrimaryPart.AssemblyLinearVelocity.Y, 0) or Vector3.zero)
+            vel += (options.jum_vel and Vector3.new(0, model.Head.AssemblyLinearVelocity.Y, 0) or Vector3.zero)
 
 			debounce_tick = tick()
 		end

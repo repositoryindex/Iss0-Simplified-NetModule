@@ -1,4 +1,4 @@
-local run_service = game:GetService("RunService")
+local run_service = game:GetService("RunService");
 
 pcall(function()
   if hum then 

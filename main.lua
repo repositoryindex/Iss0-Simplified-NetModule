@@ -70,7 +70,6 @@ net_module.calculate_vel = function(hum: Humanoid?, model: Model?, options: tabl
 			dv_multiplier = 50, --Dynamic Velocity apmplifier
 			rv_multiplier = 5,  --Rotational Velocity apmplifier
 			dynamic_vel = false, --If dynamic velocity is enabled
-      model = model,
       jum_vel = Vector3.new(0,0,0),
 			calc_rotvel = true --If rotvel calculation is enabled(otherwise 0,0,0)
 		}
@@ -105,16 +104,13 @@ end
 net_module.stabilize = function(part: BasePart, part_to: BasePart, hum: Humanoid, model: Model, options: table?): RBXScriptConnection
 	options = do_options(options,
 		{
-			cf_offset = CFrame.new(0,0,0), --For offseting...
-			st_vel = Vector3.new(0,50,0), --Static Velocity
+			st_vel = Vector3.new(0,50,0), --Stational Velocity
 			dv_debounce = .05, --Dynamic Velocity debounce
 			dv_multiplier = 50, --Dynamic Velocity apmplifier
 			rv_multiplier = 5,  --Rotational Velocity apmplifier
-			stabilize_method = "cframe", --Can use Position or CFrame
-            jum_vel = model and true or false,
-			dynamic_vel = hum and true or false, --If dynamic velocity is enabled
-			calc_rotvel = true, --If rotvel calculation is enabled(otherwise 0,0,0)
-			apply_vel = true --Apply velocity to stabilized part
+			dynamic_vel = false, --If dynamic velocity is enabled
+      jum_vel = Vector3.new(0,0,0),
+			calc_rotvel = true --If rotvel calculation is enabled(otherwise 0,0,0)
 		}
 	)
 
